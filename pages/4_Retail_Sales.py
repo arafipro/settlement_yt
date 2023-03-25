@@ -45,30 +45,30 @@ str += f"コア・前年比は結果{result_core}%、予想{predict_core}%、前
 
 st.text(str_title + str)
 
-if(selected_last_month.month < 10):
-	st.markdown(f"#### retailsales_{selected_last_month.year}0{selected_last_month.month}.txtを保存しますか？")
-else:
-	st.markdown(f"#### retailsales_{selected_last_month.year}{selected_last_month.month}.txtを保存しますか？")
-save = st.button("保存")
+# if(selected_last_month.month < 10):
+# 	st.markdown(f"#### retailsales_{selected_last_month.year}0{selected_last_month.month}.txtを保存しますか？")
+# else:
+# 	st.markdown(f"#### retailsales_{selected_last_month.year}{selected_last_month.month}.txtを保存しますか？")
+# save = st.button("保存")
 
-# 現在のパスを受け取る
-current_path = os.getcwd()
+# # 現在のパスを受け取る
+# current_path = os.getcwd()
 
-if(save and selected_last_month.month < 10):
-	# 空のファイルのパスを指定
-	empty_txt_file = pathlib.Path(f"{current_path}/retailsales_{selected_last_month.year}0{selected_last_month.month}.txt")
-	# 空のファイルを作成
-	empty_txt_file.touch()
-	# 空のファイルに読み込んだtxtを書き込む
-	empty_txt_file.write_text(str_title + str)
-	st.markdown(f"#### retailsales_{selected_last_month.year}0{selected_last_month.month}.txtを保存しました")
-elif(save and selected_last_month.month >= 10):
-	# 空のファイルのパスを指定
-	empty_txt_file = pathlib.Path(f"{current_path}/retailsales_{selected_last_month.year}{selected_last_month.month}.txt")
-	# 空のファイルを作成
-	empty_txt_file.touch()
-	# 空のファイルに読み込んだtxtを書き込む
-	empty_txt_file.write_text(str_title + str)
-	st.markdown(f"#### retailsales_{selected_last_month.year}{selected_last_month.month}.txtを保存しました")
-else:
-	""
+# if(save and selected_last_month.month < 10):
+# 	# 空のファイルのパスを指定
+# 	empty_txt_file = pathlib.Path(f"{current_path}/retailsales_{selected_last_month.year}0{selected_last_month.month}.txt")
+# 	# 空のファイルを作成
+# 	empty_txt_file.touch()
+# 	# 空のファイルに読み込んだtxtを書き込む
+# 	empty_txt_file.write_text(str_title + str)
+# 	st.markdown(f"#### retailsales_{selected_last_month.year}0{selected_last_month.month}.txtを保存しました")
+# elif(save and selected_last_month.month >= 10):
+# 	# 空のファイルのパスを指定
+# 	empty_txt_file = pathlib.Path(f"{current_path}/retailsales_{selected_last_month.year}{selected_last_month.month}.txt")
+# 	# 空のファイルを作成
+# 	empty_txt_file.touch()
+# 	# 空のファイルに読み込んだtxtを書き込む
+# 	empty_txt_file.write_text(str_title + str)
+# 	st.markdown(f"#### retailsales_{selected_last_month.year}{selected_last_month.month}.txtを保存しました")
+# else:
+# 	""

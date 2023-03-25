@@ -68,15 +68,15 @@ else:
 
 		st.text(str)
 
-		st.markdown(f"#### {ticker.upper()}_{full_year}_year.txtを保存しますか？")
-		save = st.button("保存")
-		if(save):
-			# 現在のパスを受け取る
-			current_path = os.getcwd()
-			# 空のファイルのパスを指定
-			empty_txt_file = pathlib.Path(f"{current_path}/{ticker.upper()}_{full_year}_year.txt")
-			# 空のファイルを作成
-			empty_txt_file.touch()
-			# 空のファイルに読み込んだtxtを書き込む
-			empty_txt_file.write_text(str_title + str)
-			st.markdown(f"#### {ticker.upper()}_{full_year}_year.txtを保存しました")
+		# st.markdown(f"#### {ticker.upper()}_{full_year}_year.txtを保存しますか？")
+		# save = st.button("保存")
+		# if(save):
+		# 	# 現在のパスを受け取る
+		# 	current_path = os.getcwd()
+		# 	# 空のファイルのパスを指定
+		# 	empty_txt_file = pathlib.Path(f"{current_path}/{ticker.upper()}_{full_year}_year.txt")
+		# 	# 空のファイルを作成
+		# 	empty_txt_file.touch()
+		# 	# 空のファイルに読み込んだtxtを書き込む
+		# 	empty_txt_file.write_text(str_title + str)
+		# 	st.markdown(f"#### {ticker.upper()}_{full_year}_year.txtを保存しました")

@@ -1,5 +1,5 @@
 import streamlit as st
-import pathlib
+import pathlib, os
 from packages.defs import check_plus_minus
 from dateutil.relativedelta import relativedelta
 
@@ -51,9 +51,12 @@ else:
 	st.markdown(f"#### retailsales_{selected_last_month.year}{selected_last_month.month}.txtを保存しますか？")
 save = st.button("保存")
 
+# 現在のパスを受け取る
+current_path = os.getcwd()
+
 if(save and selected_last_month.month < 10):
 	# 空のファイルのパスを指定
-	empty_txt_file = pathlib.Path(f"retailsales_{selected_last_month.year}0{selected_last_month.month}.txt")
+	empty_txt_file = pathlib.Path(f"{current_path}/retailsales_{selected_last_month.year}0{selected_last_month.month}.txt")
 	# 空のファイルを作成
 	empty_txt_file.touch()
 	# 空のファイルに読み込んだtxtを書き込む
@@ -61,7 +64,7 @@ if(save and selected_last_month.month < 10):
 	st.markdown(f"#### retailsales_{selected_last_month.year}0{selected_last_month.month}.txtを保存しました")
 elif(save and selected_last_month.month >= 10):
 	# 空のファイルのパスを指定
-	empty_txt_file = pathlib.Path(f"retailsales_{selected_last_month.year}{selected_last_month.month}.txt")
+	empty_txt_file = pathlib.Path(f"{current_path}/retailsales_{selected_last_month.year}{selected_last_month.month}.txt")
 	# 空のファイルを作成
 	empty_txt_file.touch()
 	# 空のファイルに読み込んだtxtを書き込む

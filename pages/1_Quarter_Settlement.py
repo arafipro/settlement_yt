@@ -1,5 +1,5 @@
 import streamlit as st
-import pathlib
+import pathlib, os
 from packages.defs import jp_yen, fluct_last, fluct_last_eps, fluct_predict, fluct_predict_eps
 
 st.header("四半期決算")
@@ -73,8 +73,10 @@ else:
 		st.markdown(f"#### {q_ticker.upper()}_{quarter_year}_{quarter}Q.txtを保存しますか？")
 		save = st.button("保存")
 		if(save):
+			# 現在のパスを受け取る
+			current_path = os.getcwd()
 			# 空のファイルのパスを指定
-			empty_txt_file = pathlib.Path(f"{q_ticker.upper()}_{quarter_year}_{quarter}Q.txt")
+			empty_txt_file = pathlib.Path(f"{current_path}/{q_ticker.upper()}_{quarter_year}_{quarter}Q.txt")
 			# 空のファイルを作成
 			empty_txt_file.touch()
 			# 空のファイルに読み込んだtxtを書き込む

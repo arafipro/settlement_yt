@@ -58,9 +58,9 @@ else:
 		st.markdown(f"#### 数字をすべて入力してください")
 	else:
 		str = ""
-		str += f"売上高は前年同期比{jp_yen(last_sales)}ドルで結果が{jp_yen(current_sales)}ドル、{fluct_last(current_sales,last_sales)}でした。\n"
-		str += f"純利益は前年同期比{jp_yen(last_net_income)}ドルで結果が{jp_yen(current_net_income)}ドル、{fluct_last(current_net_income,last_net_income)}でした。\n"
-		str += f"EPSは前年同期比{last_eps}ドルで結果が{current_eps}ドル、{fluct_last_eps(current_eps,last_eps)}でした。\n\n"
+		str += f"売上高は前年の{jp_yen(last_sales)}ドルから{fluct_last(current_sales,last_sales)}の{jp_yen(current_sales)}ドルとなりました。\n"
+		str += f"純利益は前年の{jp_yen(last_net_income)}ドルから{fluct_last(current_net_income,last_net_income)}の{jp_yen(current_net_income)}ドルとなりました。\n"
+		str += f"EPSは前年の{last_eps}ドルから{fluct_last_eps(current_eps,last_eps)}の{current_eps}ドルとなりました。\n\n"
 
 		str += f"売上高はアナリスト予想{jp_yen(predict_sales)}ドルで結果が{jp_yen(current_sales)}ドル、{fluct_predict(current_sales,predict_sales)}りました。\n"
 		str += f"純利益はアナリスト予想{jp_yen(predict_net_income)}ドルで結果が{jp_yen(current_net_income)}ドル、{fluct_predict(current_net_income,predict_net_income)}りました。\n"

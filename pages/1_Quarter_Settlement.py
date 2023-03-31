@@ -4,7 +4,7 @@ from packages.defs import jp_yen, fluct_last, fluct_last_eps, fluct_predict, flu
 
 st.header("四半期決算")
 
-q_stock_name = st.text_input("銘柄名", key="q_stock_name", max_chars=5)
+q_stock_name = st.text_input("銘柄名", key="q_stock_name")
 col1, col2, col3 = st.columns(3)
 with col1:
 	q_ticker = st.text_input("ティッカ", key="q_ticker", max_chars=5)
